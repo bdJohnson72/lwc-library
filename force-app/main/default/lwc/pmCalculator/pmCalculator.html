@@ -4,16 +4,31 @@
 
 <!-- Pm Calculator -->
 <template>
-    <lightning-card title="Project Managment PERT Calculator">
+    <lightning-card title="Project Managment PERT Calculator" class="calculator">
         <lightning-layout >
             <lightning-layout-item size="2" class="slds-m-around--x-small">
-                <lightning-input data-id="worstCase" label="Pessimistic" type="number" placeholder="0.0"  name='worstCase' onchange={handleChange} focus></lightning-input>
+                <lightning-input label="Pessimistic"
+                                 type="number" placeholder="0.0"
+                                 value={pessimistic}
+                                 name='pessimistic' onchange={handleChange}>
+                </lightning-input>
             </lightning-layout-item>
             <lightning-layout-item size="2" class="slds-m-around--x-small">
-                 <lightning-input label='Best Case' type="number"  name="Optimistic"  placeholder="0.0" onchange={handleChange}></lightning-input>
+                 <lightning-input label='Best Case'
+                                  type="number"
+                                  name="Optimistic"
+                                  placeholder="0.0"
+                                  value={optimistic}
+                                  onchange={handleChange}>
+                 </lightning-input>
             </lightning-layout-item>
             <lightning-layout-item size="2" class="slds-m-around--x-small">
-                <lightning-input label='Most Likely' type="number" name="Most Likely" placeholder="0.0" onchange={handleChange}></lightning-input>
+                <lightning-input label='Most Likely'
+                                 type="number"
+                                 name="mostLikely"
+                                 placeholder="0.0"
+                                 value={mostLikely}
+                                 onchange={handleChange}></lightning-input>
             </lightning-layout-item>
             <lightning-layout-item size="4">
                 <p class="slds-p-around--large">Estimated Hours: <span class="slds-box_border slds-p-around--large">{estimate}</span></p>
