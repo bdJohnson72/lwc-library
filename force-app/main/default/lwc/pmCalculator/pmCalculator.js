@@ -14,19 +14,19 @@ handleChange(event){
     console.log(event.target.name);
     console.log(event.target.value);
     if (event.target.name === "mostLikely"){
-        this.mostLikely = event.target.value;
+        this.mostLikely =   parseFloat(event.target.value);
         console.log(this.mostLikely)
     }else if (event.target.name === "pessimistic"){
-        this.pessimistic = event.target.value;
+        this.pessimistic = parseFloat(event.target.value);
         console.log(this.pessimistic);
     }else {
-        this.optimistic = event.target.value;
+        this.optimistic = parseFloat(event.target.value);
         console.log(this.optimistic);
     }
 }
 
 calculate(){
-    this.estimate = parseFloat((this.optimistic + (4*this.mostLikely) + this.pessimistic) / 6);
+    this.estimate = ((this.optimistic + (4* this.mostLikely) + this.pessimistic) /6);
     console.log(this.optimistic);
     console.log(this.mostLikely * 4);
     console.log(this.pessimistic);
